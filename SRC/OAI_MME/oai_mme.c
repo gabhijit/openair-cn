@@ -2,9 +2,9 @@
  * Licensed to the OpenAirInterface (OAI) Software Alliance under one or more
  * contributor license agreements.  See the NOTICE file distributed with
  * this work for additional information regarding copyright ownership.
- * The OpenAirInterface Software Alliance licenses this file to You under 
+ * The OpenAirInterface Software Alliance licenses this file to You under
  * the Apache License, Version 2.0  (the "License"); you may not use this file
- * except in compliance with the License.  
+ * except in compliance with the License.
  * You may obtain a copy of the License at
  *
  *      http://www.apache.org/licenses/LICENSE-2.0
@@ -63,6 +63,7 @@ main (
   int argc,
   char *argv[])
 {
+  char *config_pid_dir;
   char *pid_dir;
   char *pid_file_name;
 
@@ -72,10 +73,12 @@ main (
    */
   CHECK_INIT_RETURN (mme_config_parse_opt_line (argc, argv, &mme_config));
 
-  pid_dir = bstr2cstr(mme_config.pid_dir, 1);
-  pid_dir = pid_dir ? pid_dir : "/var/run";
+  config_pid_dir = bstr2cstr(mme_config.pid_dir, 1);
+  pid_dir = config_pid_dir ? pid_dir : "/var/run";
   pid_file_name = get_exe_absolute_path(pid_dir);
-  bcstrfree(pid_dir);
+  if (config_pid_dir != NULL) {
+    bcstrfree(bfromcstr(config_pid_dir));
+  }
 
 #if DAEMONIZE
   pid_t pid, sid; // Our process ID and Session ID
