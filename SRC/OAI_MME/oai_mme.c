@@ -77,7 +77,7 @@ main (
   pid_dir = config_pid_dir ? pid_dir : "/var/run";
   pid_file_name = get_exe_absolute_path(pid_dir);
   if (config_pid_dir != NULL) {
-    bcstrfree(bfromcstr(config_pid_dir));
+    bcstrfree(config_pid_dir);
   }
 
 #if DAEMONIZE

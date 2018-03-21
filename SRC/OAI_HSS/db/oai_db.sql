@@ -62,7 +62,7 @@ CREATE TABLE `mmeidentity` (
 
 LOCK TABLES `mmeidentity` WRITE;
 /*!40000 ALTER TABLE `mmeidentity` DISABLE KEYS */;
-INSERT INTO `mmeidentity` VALUES (2,'mme2.openair4G.eur','openair4G.eur',0),(1,'nano.openair4G.eur','openair4G.eur',0),(5,'abeille.openair4G.eur','openair4G.eur',0),(4,'yang.openair4G.eur','openair4G.eur',0),(3,'mme3.openair4G.eur','openair4G.eur',0),(6,'calisson.openair4G.eur','openair4G.eur',0);
+INSERT INTO `mmeidentity` VALUES (2,'mme2.openair4G.eur','openair4G.eur',0),(1,'nano.openair4G.eur','openair4G.eur',0),(5,'abeille.openair4G.eur','openair4G.eur',0),(4,'yang.openair4G.eur','openair4G.eur',0),(3,'mme3.openair4G.eur','openair4G.eur',0),(6,'calisson.openair4G.eur','openair4G.eur',0), (7,'mme.openair4G.eur', 'openair4G.eur', 0);
 /*!40000 ALTER TABLE `mmeidentity` ENABLE KEYS */;
 UNLOCK TABLES;
 
